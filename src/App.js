@@ -1,14 +1,14 @@
+import { Drawer } from '@material-ui/core';
 import React from 'react';
 import './App.css';
+import Header from './components/header/Header';
+// import AppDrawer from './components/drawer/Drawer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Awesomeness coming your way...soon!
-        </p>
-      </header>
+      {/* <AppDrawer /> */}
+      <Header />
     </div>
   );
 }
