@@ -37,8 +37,8 @@ export default function ButtonAppBar() {
       <AppDrawer anchor={"left"} openState={drawerOpen} onSelect={handleSelect} />
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon onClick={openDrawer} />
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={openDrawer}>
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             Exp
