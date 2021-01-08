@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   avatar: {
     display: "flex",
     justifyContent: "center",
+    margin: "10px 0 10px 0",
     "& > *": {
       margin: 8,
     },
@@ -37,6 +38,10 @@ const useStyles = makeStyles({
     width: 100,
     height: 100,
   },
+  profileInfo: {
+    display: "flex",
+    justifyContent: "center"
+  }
 });
 
 export default function AppDrawer({ anchor, openState, onSelect }) {
@@ -53,20 +58,20 @@ export default function AppDrawer({ anchor, openState, onSelect }) {
         <ListItemIcon>
           <SupervisorAccountOutlinedIcon />
         </ListItemIcon>
-        <ListItemText primary={"Accounts"} />
+        <ListItemText primary={"Accounts"} dense secondary={"Manage accounts"} />
       </ListItem>
       <ListItem button>
         <ListItemIcon>
           <AccountTreeOutlinedIcon />
         </ListItemIcon>
-        <ListItemText primary={"Heads"} />
+        <ListItemText primary={"Heads"} dense secondary={"Manage heads"} />
       </ListItem>
       <Divider />
       <ListItem button>
         <ListItemIcon>
           <TransferWithinAStationOutlinedIcon />
         </ListItemIcon>
-        <ListItemText primary={"Entries"} />
+        <ListItemText primary={"Entries"} dense secondary={"Your transactions"} />
       </ListItem>
       <Divider />
       <ListItem button>
@@ -92,8 +97,12 @@ export default function AppDrawer({ anchor, openState, onSelect }) {
                 AR
               </Avatar>
             </ListItemAvatar>
+            <ListItem>
+              <ListItemText primary={"Abdul Rauf"} dense secondary={"Web Developer"} />
+            </ListItem>
           </div>
-
+          {/* <div className={classes.profileInfo}>
+          </div> */}
           {list(anchor)}
         </Drawer>
       </React.Fragment>
