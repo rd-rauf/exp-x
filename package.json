@@ -1,5 +1,6 @@
 {
   "name": "expense-manager",
+  "title": "Personal Expense Manager",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

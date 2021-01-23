@@ -1,5 +1,7 @@
 import React from "react";
 import clsx from "clsx";
+import { Link } from 'react-router-dom';
+
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
@@ -54,18 +56,22 @@ export default function AppDrawer({ anchor, openState, onSelect }) {
   const list = (anchor) => (
     <div className={clsx(classes.list)} onClick={closeDrawer}>
       <Divider />
-      <ListItem button>
-        <ListItemIcon>
-          <SupervisorAccountOutlinedIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Accounts"} dense secondary={"Manage accounts"} />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <AccountTreeOutlinedIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Heads"} dense secondary={"Manage heads"} />
-      </ListItem>
+      <Link to="/accounts">
+        <ListItem button>
+          <ListItemIcon>
+            <SupervisorAccountOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Accounts"} dense secondary={"Manage accounts"} />
+        </ListItem>
+      </Link>
+      <Link to="/heads">
+        <ListItem button>
+          <ListItemIcon>
+            <AccountTreeOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Heads"} dense secondary={"Manage heads"} />
+        </ListItem>
+      </Link>
       <Divider />
       <ListItem button>
         <ListItemIcon>
