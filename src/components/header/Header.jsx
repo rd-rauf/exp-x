@@ -7,7 +7,6 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AppDrawer from '../drawer/Drawer';
-import * as pkg from '../../../package.json';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,7 +41,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            { pkg.title }
+            { "Personal Expense Manager" }
           </Typography>
         </Toolbar>
       </AppBar>
