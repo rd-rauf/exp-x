@@ -1,4 +1,3 @@
-import { Switch } from 'react-router-dom';
 
 const Heads = () => {
     return ( 
