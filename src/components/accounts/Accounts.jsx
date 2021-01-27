@@ -22,8 +22,8 @@ export function Inner1(props) {
             <Switch>
                 {/* <Route path={`${match.url}/nested1`} component={Nested1} /> */}
                 <Route path={`${match.url}/nested1`} render={(props) => (
-                    ( <h1>Nested 1</h1> )
-                ) } />
+                    (<h1>Nested 1</h1>)
+                )} />
             </Switch>
         </>
     );

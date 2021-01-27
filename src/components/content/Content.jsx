@@ -3,7 +3,7 @@ import Accounts from '../accounts/Accounts';
 import Heads from '../heads/Heads';
 
 const Content = () => {
-    return ( 
+    return (
         <>
             <Switch>
                 <Route path="/accounts" component={Accounts}></Route>
@@ -11,7 +11,7 @@ const Content = () => {
                 <Route path="/" component={SignIn}></Route>
             </Switch>
         </>
-     );
+    );
 }
 
 export function SignIn(props) {

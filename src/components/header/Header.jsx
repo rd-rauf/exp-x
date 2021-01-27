@@ -40,7 +40,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            { "Personal Expense Manager" }
+            {"Personal Expense Manager"}
           </Typography>
         </Toolbar>
       </AppBar>
