@@ -80,12 +80,14 @@ export default function AppDrawer({ anchor, openState, onSelect }) {
         <ListItemText primary={"Entries"} dense secondary={"Your transactions"} />
       </ListItem>
       <Divider />
-      <ListItem button>
-        <ListItemIcon>
-          <ExitToAppOutlinedIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Logout"} />
-      </ListItem>
+      <Link to="/sign-in">
+        <ListItem button>
+          <ListItemIcon>
+            <ExitToAppOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Logout"} dense secondary={"Logout"} />
+        </ListItem>
+      </Link>
     </div>
   );
 
