@@ -1,23 +1,25 @@
 import { Route, Switch } from 'react-router-dom';
+
+import SignIn from '../sign-in/SignIn';
+import SignUp from '../sign-up/SignUp';
 import Accounts from '../accounts/Accounts';
 import Heads from '../heads/Heads';
+import ContentArea from './ContentArea';
 
 const Content = () => {
     return (
         <>
-            <Switch>
-                <Route path="/accounts" component={Accounts}></Route>
-                <Route path="/heads" component={Heads}></Route>
-                <Route path="/" component={SignIn}></Route>
-            </Switch>
+            <ContentArea>
+                <Switch>
+                    <Route path="/" exact component={SignIn}></Route>
+                    <Route path="/sign-in" component={SignIn}></Route>
+                    <Route path="/sign-up" component={SignUp}></Route>
+                    <Route path="/accounts" component={Accounts}></Route>
+                    <Route path="/heads" component={Heads}></Route>
+                </Switch>
+            </ContentArea>
         </>
     );
-}
-
-export function SignIn(props) {
-    return (
-        <h1>User login</h1>
-    )
 }
 
 export default Content;
