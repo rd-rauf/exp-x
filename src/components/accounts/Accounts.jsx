@@ -1,14 +1,16 @@
 import { Switch, Route } from 'react-router-dom';
+import AccountsList from './AccountsList';
 
 export default function Accounts(props) {
-    const { match } = props;
+    // const { match } = props;
     return (
         <>
-            <h1>Accounts Page</h1>
-            <Switch>
+            <h1>Accounts</h1>
+            <AccountsList />
+            {/* <Switch>
                 <Route path={`${match.url}/inner1`} component={Inner1} />
                 <Route path={`${match.url}/inner2`} component={Inner2} />
-            </Switch>
+            </Switch> */}
         </>
     );
 }
