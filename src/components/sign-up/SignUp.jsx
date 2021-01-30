@@ -9,8 +9,13 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+import Tooltip from '@material-ui/core/Tooltip';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import { EmailRounded, Lock } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -31,6 +36,20 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
+
+
+const HtmlTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    maxWidth: 320,
+    fontSize: theme.typography.pxToRem(14),
+    border: '1px solid #dadde9',
+    borderRadius: '6px',
+    margin: '0px',
+    padding: '5px'
+  },
+}))(Tooltip);
 
 export default function SignUp() {
   const classes = useStyles();
@@ -57,6 +76,13 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <AccountCircle />
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -68,6 +94,13 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <AccountCircle />
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -79,6 +112,13 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailRounded />
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -91,13 +131,50 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Lock />
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Grid>
             <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="confirm-password"
+                label="Confirm Password"
+                type="password"
+                id="confirm-password"
+                autoComplete="current-password"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Lock />
+                    </InputAdornment>
+                  ),
+                }}
               />
+            </Grid>
+            <Grid item xs={12}>
+              <HtmlTooltip
+                arrow
+                placement="right"
+                title={
+                  <React.Fragment>
+                    {/* <Typography color="inherit">You will receive a monthly newsletter in your registered email</Typography> */}
+                    <span>By subscribing, you will receive a monthly newsletter in your registered email</span>
+                  </React.Fragment>
+                }
+              >
+                <FormControlLabel
+                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  label="Subscribe to newsletter"
+                />
+              </HtmlTooltip>
             </Grid>
           </Grid>
           <Button

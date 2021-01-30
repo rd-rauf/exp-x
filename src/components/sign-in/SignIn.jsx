@@ -12,6 +12,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import InputAdornment from '@material-ui/core/InputAdornment';
+import { EmailRounded, Lock } from '@material-ui/icons';
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -56,6 +59,13 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <EmailRounded />
+                </InputAdornment>
+              ),
+            }}
           />
           <TextField
             variant="outlined"
@@ -67,6 +77,13 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Lock />
+                </InputAdornment>
+              ),
+            }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
