@@ -2,7 +2,7 @@ import axios from "axios";
 import axiosConfig from "./axiosConfig";
 
 const instance = axios.create({
-  baseURL: "http://13.127.142.19:1337"
+  baseURL: "https://strapi-api-backend.herokuapp.com"
 });
 
 let userAuthInfo = localStorage.getItem("userInfo");
