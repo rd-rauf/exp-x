@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  exp-man:
+    container_name: exp-man
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/exp-ui"
+      - "/exp-ui/node_modules"
+    ports:
+      - 80:80
+    environment:
+      NODE_ENV: production
